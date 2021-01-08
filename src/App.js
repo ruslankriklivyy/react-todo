@@ -75,7 +75,7 @@ function App() {
     });
     setLists(newList);
     axios
-      .patch('http://localhost:3001/tasks/' + taskId, {
+      .patch('tasks/' + taskId, {
         completed,
       })
       .catch(() => {
