@@ -10,7 +10,7 @@ import removeSvg from '../../assets/img/remove.svg';
 const List = ({ items, onClick, activeItem, isRemove, onClickItem, removeList }) => {
   const onRemoveList = (item) => {
     if (window.confirm('Вы действительно хотите удалить список?')) {
-      axios.delete('http://localhost:3001/lists/' + item.id).then(() => {
+      axios.delete('lists/' + item.id).then(() => {
         removeList(item.id);
       });
     }

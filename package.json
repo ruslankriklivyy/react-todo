@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server ./src/assets/db.json --watch --port 3001"
+    "server": "json-server ./public/db.json --watch --port 3001"
   },
   "eslintConfig": {
     "extends": [
@@ -29,6 +29,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "http://localhost:3001/",
   "browserslist": {
     "production": [
       ">0.2%",

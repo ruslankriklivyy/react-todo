@@ -30,7 +30,7 @@ const AddTask = ({ addTask, list }) => {
 
     setIsLoading(true);
     axios
-      .post('http://localhost:3001/tasks', obj)
+      .post('tasks', obj)
       .then(({ data }) => {
         if (!data.text) {
           alert('Введите задачу');

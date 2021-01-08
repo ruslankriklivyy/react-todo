@@ -38,7 +38,7 @@ const AddListButton = ({ colors, addList }) => {
       return;
     }
     axios
-      .post('http://localhost:3001/lists', {
+      .post('lists', {
         name: inputValue,
         colorId: activeBadge,
       })
