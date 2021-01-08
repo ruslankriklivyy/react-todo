@@ -15,10 +15,10 @@ function App() {
   let location = useLocation();
 
   React.useEffect(() => {
-    axios.get('http://localhost:3001/lists?_expand=color&_embed=tasks').then(({ data }) => {
+    axios.get('lists?_expand=color&_embed=tasks').then(({ data }) => {
       setLists(data);
     });
-    axios.get('http://localhost:3001/colors').then(({ data }) => {
+    axios.get('colors').then(({ data }) => {
       setColors(data);
     });
   }, []);
@@ -36,7 +36,7 @@ function App() {
 
   const onEditNameList = (id, title) => {
     axios
-      .patch('http://localhost:3001/lists/' + id, {
+      .patch('lists/' + id, {
         name: title,
       })
       .catch(() => {
@@ -102,7 +102,7 @@ function App() {
     });
     setLists(newList);
     axios
-      .patch('http://localhost:3001/tasks/' + taskObj.id, {
+      .patch('tasks/' + taskObj.id, {
         text: newTaskText,
       })
       .catch(() => {
@@ -119,7 +119,7 @@ function App() {
         return item;
       });
       setLists(newLists);
-      axios.delete('http://localhost:3001/tasks/' + taskId).catch(() => {
+      axios.delete('tasks/' + taskId).catch(() => {
         alert('Не удалось удалить задачу');
       });
     }
